@@ -1,4 +1,4 @@
-# stackFinal Integration instructions
+# App Integration instructions
 
 ## android-app
 This is the android app for cocktail shop
