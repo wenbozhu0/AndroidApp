@@ -1,0 +1,33 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  sam_emailer_python
+
+  Sample SAM Template for sam_emailer_python
+
+
+Globals:
+  Function:
+    Timeout: 10
+
+Resources:
+  EmailFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: EmailFunction
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      MemorySize: 512
+      Architectures:
+        - x86_64
+      Events:
+        MailSender:
+          Type: Api
+          Properties:
+            Path: /mail
+            Method: POST
+
+Outputs:
+  EmailFunction:
+    Description: "API Gateway endpoint URL for emailer lambda"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/mail/"

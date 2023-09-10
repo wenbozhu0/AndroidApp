@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "91b29388-32e5-4cd4-ae27-f8bc4920578f",
+		"name": "Favorite",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28450013"
+	},
+	"item": [
+		{
+			"name": "Endpoint_tests",
+			"item": [
+				{
+					"name": "Get_all_favorites",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://54.147.236.105:8080/favorite",
+							"protocol": "http",
+							"host": [
+								"54",
+								"147",
+								"236",
+								"105"
+							],
+							"port": "8080",
+							"path": [
+								"favorite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_one_favorite_by_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://54.147.236.105:8080/favorite/64dcf86e0d19ff2e94ab18e3",
+							"protocol": "http",
+							"host": [
+								"54",
+								"147",
+								"236",
+								"105"
+							],
+							"port": "8080",
+							"path": [
+								"favorite",
+								"64dcf86e0d19ff2e94ab18e3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_favorite_by_page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://54.147.236.105:8080/favorite/paged/2",
+							"protocol": "http",
+							"host": [
+								"54",
+								"147",
+								"236",
+								"105"
+							],
+							"port": "8080",
+							"path": [
+								"favorite",
+								"paged",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_one_favorite_by_id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://54.147.236.105:8080/favorite/64dcf86e0d19ff2e94ab18f9",
+							"protocol": "http",
+							"host": [
+								"54",
+								"147",
+								"236",
+								"105"
+							],
+							"port": "8080",
+							"path": [
+								"favorite",
+								"64dcf86e0d19ff2e94ab18f9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_a_favorite",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5063114bd386d8fadbd6b004\",\n    \"idDrink\": \"testIdss\",\n    \"strDrink\": \"testDrinkss\",\n    \"strCategory\": \"testCategoryss\",\n    \"strGlass\": \"testGlassss\",\n    \"strInstructions\": \"testInstructionsss\",\n    \"strDrinkThumb\": \"https://www.thecocktaildb.com/images/media/drink/9179i01503565212.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://54.147.236.105:8080/favorite/",
+							"protocol": "http",
+							"host": [
+								"54",
+								"147",
+								"236",
+								"105"
+							],
+							"port": "8080",
+							"path": [
+								"favorite",
+								""
+							]
+						},
+						"description": "Add a new beer and returns the entire array"
+					},
+					"response": []
+				},
+				{
+					"name": "Add_a_favorite",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"64dcf86e0d19ff2e94ab18f9\",\n    \"idDrink\": \"testId\",\n    \"strDrink\": \"testDrink\",\n    \"strCategory\": \"testCategory\",\n    \"strGlass\": \"testGlass\",\n    \"strInstructions\": \"testInstructions\",\n    \"strDrinkThumb\": \"https://www.thecocktaildb.com/images/media/drink/9179i01503565212.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://54.147.236.105:8080/favorite",
+							"protocol": "http",
+							"host": [
+								"54",
+								"147",
+								"236",
+								"105"
+							],
+							"port": "8080",
+							"path": [
+								"favorite"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Negative_tests",
+			"item": [
+				{
+					"name": "Get_one_favorite_incorrect_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://54.147.236.105:8080/favorite/64be6a7587aef515f03b80ce",
+							"protocol": "http",
+							"host": [
+								"54",
+								"147",
+								"236",
+								"105"
+							],
+							"port": "8080",
+							"path": [
+								"favorite",
+								"64be6a7587aef515f03b80ce"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
